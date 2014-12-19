@@ -16,6 +16,7 @@ Features:
 
 Problem:
 - Modularity / Flexibility
+- SQL structure / not using foreign key / bad normalisation
 - More to find
 
 Progress:
