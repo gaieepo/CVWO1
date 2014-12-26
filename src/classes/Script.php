@@ -40,8 +40,8 @@ class Script {
 		return true;
 	}
 
-	public function delete($field = null) {
-		$this->_db->delete('scripts', $field);
+	public function delete($id = null) {
+		$this->_db->delete('scripts', array('id', '=', $id));
 	}
 
 	public function data() {

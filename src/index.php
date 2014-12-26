@@ -1,5 +1,6 @@
 <?php 
 require_once 'core/init.php';
+include 'includes/header.php';
 
 if (Session::exists('home')) {
 	echo "<p>" . Session::flash('home') . "</p>";
@@ -13,6 +14,7 @@ if ($user->isLoggedIn()) {
 		<li><a href="logout.php">Log out</a></li>
 		<li><a href="update.php">Update details</a></li>
 		<li><a href="changepassword.php">Change password</a></li>
+		<li><a href="newscript.php">Create post</a></li>
 	</ul>
 
 <?php 
@@ -31,10 +33,12 @@ if ($blog->find_all()) {
 		// get author
 ?>
 	<div class="script">
-		<h3><?php echo escape($script->title); ?></h3>
+		<h3><a href="script.php?id=<?php echo escape($script->id); ?>"><?php echo escape($script->title); ?></a></h3>
 		<h5><?php echo escape($script->date); ?></h5>
 	</div>
 
 <?php
 	}
 }
+
+include 'includes/footer.php';
